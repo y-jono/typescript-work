@@ -1,0 +1,21 @@
+version: "3"
+services:
+  unko:
+    container_name: unko
+    tty: true
+    image: unko
+    build:
+      context: .
+    volumes:
+      - ./:/usr/unko/
+      # node_modulesはgitでもdockerイメージでも保持したくないので
+      # docker containerにデータボリュームとしてマウントし、
+      # docker-compose build時にインストールする。
+      - /usr/unko/node_modules
+    command:
+      sh -c "
+      echo unko &&
+      npx tsc src/index.ts &&
+      node src/index.js
+      "
+
