@@ -1,9 +1,16 @@
-imageをDockerfileで作り直す
+# 概要
+
+typescript をお試しするためのDockerイメージ.
+
+# 使い方
+
+imageをDockerfileで作る。
+
 ```shell
 docker-compose build
 ```
 
-index.tsを実行する
+TypeScriptソースコード(index.ts)コンパイルし、実行する。
 ```shell
 docker-compose up
 ```
@@ -13,7 +20,5 @@ docker-compose up
 docker-compose run --rm unko /bin/bash
 ```
 
-pacakge.jsonをnpmで更新したいときは、ログインしてからnpm操作すること
+pacakge.jsonを更新したいときは、ログインしてからnpmで操作する。
 
-
-.dockerignoreで node_modules を無視するように
