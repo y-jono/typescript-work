@@ -1,6 +1,6 @@
 FROM node
 
-WORKDIR /usr/unko/
+WORKDIR /usr/tsapp/
 
 # touchのようにファイル時刻を更新するテクニック。
 # package.jsonを変更しても、これをしないと node_modules が更新されない。
